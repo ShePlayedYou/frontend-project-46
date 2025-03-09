@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "Second project",
-  "main": "gendiff.js",
+  "main": "bin/gendiff.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,8 @@
   "author": "Nastya",
   "license": "ISC",
   "dependencies": {
-    "commander": "^13.1.0"
+    "commander": "^13.1.0",
+    "fs": "^0.0.1-security"
   },
   "devDependencies": {
     "eslint": "^8.57.1",
