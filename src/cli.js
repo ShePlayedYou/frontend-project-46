@@ -1,5 +1,5 @@
 import { Command } from 'commander';
-import parse from './parseFiles.js';
+import genDiff from './genDiff.js';
 
 const gendiff = new Command();
 
@@ -10,7 +10,7 @@ gendiff
   .argument('filepath2')
   .option('-f, --format [type]', 'output format')
   .action((filepath1, filepath2) => {
-    parse(filepath1, filepath2);
+    genDiff(filepath1, filepath2);
   });
 
 export default gendiff;
