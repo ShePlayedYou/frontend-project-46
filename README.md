@@ -4,5 +4,7 @@
 ### CodeClimate Bages
 [![Maintainability](https://api.codeclimate.com/v1/badges/5f0deb36fa43e48a5975/maintainability)](https://codeclimate.com/github/ShePlayedYou/frontend-project-46/maintainability)
 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5f0deb36fa43e48a5975/test_coverage)](https://codeclimate.com/github/ShePlayedYou/frontend-project-46/test_coverage)
+
 ### Gendiff demo with flat files diff
 [![asciicast](https://asciinema.org/a/xJtQ1qWJIwfylRJUv3pVzk57w.svg)](https://asciinema.org/a/xJtQ1qWJIwfylRJUv3pVzk57w)
