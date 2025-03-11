@@ -4,7 +4,7 @@
   "description": "Second project",
   "main": "bin/gendiffEntry.js",
   "scripts": {
-     "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage"
   },
   "type": "module",
   "bin": {
