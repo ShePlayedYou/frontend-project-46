@@ -25,6 +25,7 @@ const genDiff = (filepath1, filepath2) => {
 
   const formattedResult = `{${'\n'}${[...diffLines, ...addedKeys].flat().join('\n')}${'\n'}}`;
   console.log(formattedResult);
+  return formattedResult;
 };
 
 export default genDiff;
