@@ -4,7 +4,7 @@
   "description": "Second project",
   "main": "bin/gendiffEntry.js",
   "scripts": {
-     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage"
   },
   "type": "module",
   "bin": {
@@ -14,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^13.1.0",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^8.57.1",
