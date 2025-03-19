@@ -11,3 +11,6 @@
 
 ### Gendiff demo with flat YAML and YML files
 [![asciicast](https://asciinema.org/a/OvROKBByuA84JyDu0QBmYA7p2.svg)](https://asciinema.org/a/OvROKBByuA84JyDu0QBmYA7p2)
+
+### Gendiff demo with nested JSON and YAML files
+[![asciicast](https://asciinema.org/a/ZqK24YFQpwqx0wFn8US32GSJ8.svg)](https://asciinema.org/a/ZqK24YFQpwqx0wFn8US32GSJ8)

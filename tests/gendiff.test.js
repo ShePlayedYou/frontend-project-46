@@ -8,32 +8,28 @@ const __dirname = dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '.', '__fixtures__', filename);
 
-const expectedResult = readFileSync(getFixturePath('expectedFile.txt'), 'utf8');
-
-const file1Json = getFixturePath('file1.json');
-const file2Json = getFixturePath('file2.json');
-
-const file1Yaml = getFixturePath('file1.yaml');
-const file2Yaml = getFixturePath('file2.yaml');
+const expectedResultFlat = readFileSync(getFixturePath('expectedFile.txt'), 'utf8');
+const expectedResultNested = readFileSync(getFixturePath('expectedFileNested.txt'), 'utf8');
 
 const file1Yml = getFixturePath('file1.yml');
 const file2Yml = getFixturePath('file2.yml');
 
-const undefinedFormat1 = 'file1.jpeg';
-const undefinedFormat2 = 'file2.jpeg';
+const file1JsonNested1 = getFixturePath('file1NestedJson.json');
+const file1JsonNested2 = getFixturePath('file2NestedJson.json');
 
-test('genDiff flat files test json', () => {
-  expect(genDiff(file1Json, file2Json)).toBe(expectedResult);
-});
+const file1YamlNested1 = getFixturePath('file1NestedYaml.yaml');
+const file1YamlNested2 = getFixturePath('file2NestedYaml.yaml');
 
-test('genDiff flat files test yaml', () => {
-  expect(genDiff(file1Yaml, file2Yaml)).toBe(expectedResult);
-});
+const formatNameDefault = { format: 'stylish' };
 
 test('genDiff flat files test yml', () => {
-  expect(genDiff(file1Yml, file2Yml)).toBe(expectedResult);
+  expect(genDiff(file1Yml, file2Yml, formatNameDefault)).toBe(expectedResultFlat);
 });
 
-test('genDiff undefined format', () => {
-  expect(() => genDiff(undefinedFormat1, undefinedFormat2)).toThrow('Неизвестный формат.');
+test('genDiff nested files test json', () => {
+  expect(genDiff(file1JsonNested1, file1JsonNested2, formatNameDefault)).toBe(expectedResultNested);
+});
+
+test('genDiff nested files test yaml', () => {
+  expect(genDiff(file1YamlNested1, file1YamlNested2, formatNameDefault)).toBe(expectedResultNested);
 });
