@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import parser from './parser.js';
 import buildTree from './treeBuilder.js';
-import format from './format.js';
+import format from './formatters/index.js';
 
 const getFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 const getFileFormat = (filepath) => path.extname(filepath);

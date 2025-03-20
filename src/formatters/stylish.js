@@ -37,13 +37,4 @@ const formatStylish = (tree, depth) => {
   return formattedLines.join('\n');
 };
 
-const format = (newTree, choosenFormat) => {
-  switch (choosenFormat) {
-    case 'stylish':
-      return `{\n${formatStylish(newTree, 1)}\n}`;
-    default:
-      throw new Error(`Неизвестный формат: ${choosenFormat}`);
-  }
-};
-
-export default format;
+export default formatStylish;
