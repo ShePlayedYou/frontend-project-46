@@ -1,11 +1,14 @@
 import _ from 'lodash';
 
 const replacer = ' ';
+const spacesCount = 4;
+
+const getIndent = (depth) => replacer.repeat(depth * spacesCount - 2);
 
 const formatValue = (value, depth) => {
   if (_.isObject(value) && !Array.isArray(value)) {
-    const indent = replacer.repeat(depth * 4);
-    const closingIndent = replacer.repeat((depth - 1) * 4);
+    const indent = replacer.repeat(depth * spacesCount);
+    const closingIndent = replacer.repeat((depth - 1) * spacesCount);
 
     const formattedEntries = Object.entries(value)
       .map(([key, val]) => `${indent}${key}: ${formatValue(val, depth + 1)}`);
@@ -15,7 +18,7 @@ const formatValue = (value, depth) => {
 };
 
 const formatStylish = (tree, depth) => {
-  const indent = replacer.repeat(depth * 4 - 2);
+  const indent = getIndent(depth);
   const formattedLines = tree.map((node) => {
     const formattedValue = formatValue(node.value, depth + 1);
 
