@@ -25,9 +25,9 @@ const file1JsonNested2 = getFixturePath('file2NestedJson.json');
 const file1YamlNested1 = getFixturePath('file1NestedYaml.yaml');
 const file1YamlNested2 = getFixturePath('file2NestedYaml.yaml');
 
-const formatNameStylish = { format: 'stylish' };
-const formatNamePlain = { format: 'plain' };
-const formatNameJson = { format: 'json' };
+const formatNameStylish = 'stylish';
+const formatNamePlain = 'plain';
+const formatNameJson = 'json';
 
 test('genDiff flat files test yml', () => {
   expect(gendiff(file1Yml, file2Yml, formatNameStylish)).toBe(expectedResultFlat);

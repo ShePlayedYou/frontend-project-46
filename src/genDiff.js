@@ -7,16 +7,14 @@ import format from './formatters/index.js';
 const getFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 const getFileFormat = (filepath) => path.extname(filepath);
 
-const genDiff = (filepath1, filepath2, formatName = { format: 'stylish' }) => {
+const genDiff = (filepath1, filepath2, formatName) => {
   const resolvedFile1 = getFilePath(filepath1);
   const resolvedFile2 = getFilePath(filepath2);
   const parsedFile1 = parser(fs.readFileSync(resolvedFile1, 'utf-8'), getFileFormat(resolvedFile1));
   const parsedFile2 = parser(fs.readFileSync(resolvedFile2, 'utf-8'), getFileFormat(resolvedFile2));
   const newTree = buildTree(parsedFile1, parsedFile2);
-  const choosenFormat = formatName.format;
   console.log('FORMAT NAME', formatName);
-  console.log('CHHOSEN FORMAT', choosenFormat);
-  const formatted = format(newTree, choosenFormat);
+  const formatted = format(newTree, formatName);
   return formatted;
 };
 
