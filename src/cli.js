@@ -10,8 +10,8 @@ gendiff
   .argument('filepath2')
   .option('-f, --format <type>', 'output format', 'stylish')
   .action((filepath1, filepath2, options) => {
-    const { formatName } = options;
-    console.log(genDiff(filepath1, filepath2, formatName));
+    const { format } = options;
+    console.log(genDiff(filepath1, filepath2, format));
   });
 
 export default gendiff;
