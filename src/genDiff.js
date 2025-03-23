@@ -7,7 +7,7 @@ import format from './formatters/index.js';
 const getFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 const getFileFormat = (filepath) => path.extname(filepath);
 
-const genDiff = (filepath1, filepath2, formatName) => {
+const genDiff = (filepath1, filepath2, formatName = { format: 'stylish' }) => {
   const resolvedFile1 = getFilePath(filepath1);
   const resolvedFile2 = getFilePath(filepath2);
   const parsedFile1 = parser(fs.readFileSync(resolvedFile1, 'utf-8'), getFileFormat(resolvedFile1));
