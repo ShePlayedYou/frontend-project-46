@@ -2,13 +2,13 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "Second project",
-  "main": "bin/gendiffEntry.js",
+  "main": "index.js",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage"
   },
   "type": "module",
   "bin": {
-    "gendiff": "bin/gendiffEntry.js"
+    "gendiff": "./bin/index.js"
   },
   "author": "Nastya",
   "license": "ISC",

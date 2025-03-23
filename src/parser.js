@@ -12,7 +12,7 @@ const parser = (file, format) => {
       return yaml.load(file);
     }
     default:
-      throw new Error('Неизвестный формат.');
+      throw new Error('Проверьте формат или файл.');
   }
 };
 

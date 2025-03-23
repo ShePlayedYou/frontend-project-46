@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
 import { readFileSync } from 'fs';
-import genDiff from '../src/genDiff.js';
+import gendiff from '../index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -30,24 +30,24 @@ const formatNamePlain = { format: 'plain' };
 const formatNameJson = { format: 'json' };
 
 test('genDiff flat files test yml', () => {
-  expect(genDiff(file1Yml, file2Yml, formatNameStylish)).toBe(expectedResultFlat);
+  expect(gendiff(file1Yml, file2Yml, formatNameStylish)).toBe(expectedResultFlat);
 });
 
 test('genDiff nested files test json', () => {
-  expect(genDiff(file1JsonNested1, file1JsonNested2, formatNameStylish))
+  expect(gendiff(file1JsonNested1, file1JsonNested2, formatNameStylish))
     .toBe(expectedResultNestedStylish);
 });
 
 test('genDiff nested stylish files test yaml', () => {
-  expect(genDiff(file1YamlNested1, file1YamlNested2, formatNameStylish))
+  expect(gendiff(file1YamlNested1, file1YamlNested2, formatNameStylish))
     .toBe(expectedResultNestedStylish);
 });
 
 test('genDiff nested plain files test yaml', () => {
-  expect(genDiff(file1JsonNested1, file1YamlNested2, formatNamePlain))
+  expect(gendiff(file1JsonNested1, file1YamlNested2, formatNamePlain))
     .toBe(expectedResultNestedPlainFormat);
 });
 
 test('genDiff flat files json formatter test', () => {
-  expect(genDiff(file1Json, file2Json, formatNameJson)).toBe(expectedResultJsonFormat);
+  expect(gendiff(file1Json, file2Json, formatNameJson)).toBe(expectedResultJsonFormat);
 });
