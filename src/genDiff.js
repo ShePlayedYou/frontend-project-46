@@ -14,6 +14,8 @@ const genDiff = (filepath1, filepath2, formatName = { format: 'stylish' }) => {
   const parsedFile2 = parser(fs.readFileSync(resolvedFile2, 'utf-8'), getFileFormat(resolvedFile2));
   const newTree = buildTree(parsedFile1, parsedFile2);
   const choosenFormat = formatName.format;
+  console.log('FORMAT NAME', formatName);
+  console.log('CHHOSEN FORMAT', choosenFormat);
   const formatted = format(newTree, choosenFormat);
   return formatted;
 };
