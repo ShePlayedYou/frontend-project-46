@@ -13,7 +13,6 @@ const genDiff = (filepath1, filepath2, formatName) => {
   const parsedFile1 = parser(fs.readFileSync(resolvedFile1, 'utf-8'), getFileFormat(resolvedFile1));
   const parsedFile2 = parser(fs.readFileSync(resolvedFile2, 'utf-8'), getFileFormat(resolvedFile2));
   const newTree = buildTree(parsedFile1, parsedFile2);
-  console.log('FORMAT NAME', formatName);
   const formatted = format(newTree, formatName);
   return formatted;
 };
